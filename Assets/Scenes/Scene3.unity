@@ -464,6 +464,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myImage: {fileID: 8310424229578634010}
   duration: 1
+  loopCount: 2
+  loopType: 1
+  autoLoop: 1
 --- !u!1 &1715272070
 GameObject:
   m_ObjectHideFlags: 0
