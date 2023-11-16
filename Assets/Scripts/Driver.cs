@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Driver : MonoBehaviour
 {
+    public Image myImage;
     public float duration;
     bool _playForward;
     IEnumerator _routine;
+
+    bool _inProgress;
+    float _progress;
 
     public void RunForward()
     {
@@ -40,19 +45,28 @@ public class Driver : MonoBehaviour
             elapsedTime = 0;
         else
             elapsedTime = duration;
+
+        if (_inProgress == true)
+            elapsedTime = _progress;
         
         while (0 <= elapsedTime && elapsedTime <= duration)
         {
+            _inProgress = true;
+            
             if (_playForward == true)
                 elapsedTime += Time.deltaTime;
             else
                 elapsedTime -= Time.deltaTime;
 
-            float result = elapsedTime / duration;
+            _progress = elapsedTime;
             
-            Debug.Log("Result: " + result);
+            float result = elapsedTime / duration;
+
+            myImage.fillAmount = result;
 
             yield return null;
         }
+
+        _inProgress = false;
     }
 }

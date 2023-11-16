@@ -462,6 +462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d2cc1821251f10458e363b0ad2647f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myImage: {fileID: 8310424229578634010}
   duration: 1
 --- !u!1 &1715272070
 GameObject:
