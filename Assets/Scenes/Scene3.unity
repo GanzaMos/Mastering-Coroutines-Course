@@ -257,6 +257,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359008983}
   m_CullTransparentMesh: 0
+--- !u!1001 &370483785
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2188422307851975052, guid: 1e3fdfdeff5215246b93d83c8d513097, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188422307851975052, guid: 1e3fdfdeff5215246b93d83c8d513097, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188422307851975052, guid: 1e3fdfdeff5215246b93d83c8d513097, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188422307851975052, guid: 1e3fdfdeff5215246b93d83c8d513097, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188422307851975052, guid: 1e3fdfdeff5215246b93d83c8d513097, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188422307851975052, guid: 1e3fdfdeff5215246b93d83c8d513097, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188422307851975052, guid: 1e3fdfdeff5215246b93d83c8d513097, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188422307851975052, guid: 1e3fdfdeff5215246b93d83c8d513097, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188422307851975052, guid: 1e3fdfdeff5215246b93d83c8d513097, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188422307851975052, guid: 1e3fdfdeff5215246b93d83c8d513097, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188422307851975052, guid: 1e3fdfdeff5215246b93d83c8d513097, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188422307851975052, guid: 1e3fdfdeff5215246b93d83c8d513097, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188422307851975052, guid: 1e3fdfdeff5215246b93d83c8d513097, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188422307851975052, guid: 1e3fdfdeff5215246b93d83c8d513097, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188422307851975052, guid: 1e3fdfdeff5215246b93d83c8d513097, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188422307851975055, guid: 1e3fdfdeff5215246b93d83c8d513097, type: 3}
+      propertyPath: m_Name
+      value: Simple Particle System
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1e3fdfdeff5215246b93d83c8d513097, type: 3}
 --- !u!1 &503668855
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,8 +538,38 @@ MonoBehaviour:
   myImage: {fileID: 8310424229578634010}
   duration: 1
   loopCount: 2
-  loopType: 1
-  autoLoop: 1
+  loopType: 0
+  autoLoop: 0
+  startEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1924518496}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  endEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1924518496}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1715272070
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,7 +627,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -631,6 +734,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862165985}
   m_CullTransparentMesh: 0
+--- !u!198 &1924518496 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2188422307851975053, guid: 1e3fdfdeff5215246b93d83c8d513097, type: 3}
+  m_PrefabInstance: {fileID: 370483785}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &201462866849387358
 MonoBehaviour:
   m_ObjectHideFlags: 0

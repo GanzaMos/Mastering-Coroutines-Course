@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public enum LoopType
@@ -17,6 +18,10 @@ public class Driver : MonoBehaviour
     public int loopCount = 1;
     public LoopType loopType;
     public bool autoLoop;
+    
+    public UnityEvent startEvent;
+    public UnityEvent endEvent;
+    
     
     bool _playForward;
     IEnumerator _routine;
@@ -47,8 +52,7 @@ public class Driver : MonoBehaviour
         if (_routine != null) 
             StopCoroutine(_routine);
     }
-
-    float rawResult;
+    
     
     IEnumerator DriverRoutine()
     {
@@ -64,6 +68,9 @@ public class Driver : MonoBehaviour
         //in case if we coroutine was finished in the middle of the progress
         if (_inProgress == true)
             elapsedTime = _progress;
+        //if we are not in Progress, play some start event
+        else
+            startEvent?.Invoke();
         
         while (0 <= elapsedTime && elapsedTime <= wholeDuration)
         {
@@ -78,7 +85,7 @@ public class Driver : MonoBehaviour
             //cache the progress Coroutine
             _progress = elapsedTime;
             
-            rawResult = elapsedTime / duration;
+            float rawResult = elapsedTime / duration;
 
             //at the and of the looping make the value more even
             if (wholeDuration - rawResult < 0.001)
@@ -95,10 +102,11 @@ public class Driver : MonoBehaviour
 
             yield return null;
         }
-
-        _inProgress = false;
-
+        
         if (autoLoop == true)
             Run(_playForward);
+        
+        _inProgress = false;
+        endEvent?.Invoke();
     }
 }
