@@ -5,10 +5,22 @@ using UnityEngine;
 public class Driver : MonoBehaviour
 {
     public float duration;
+    bool _playForward;
     IEnumerator _routine;
-    
-    public void Run()
+
+    public void RunForward()
     {
+        Run(true);
+    }
+
+    public void RunBackward()
+    {
+        Run(false);
+    }
+
+    public void Run(bool forward)
+    {
+        _playForward = forward;
         Stop();
         _routine = DriverRoutine();
         StartCoroutine(_routine);
@@ -22,11 +34,19 @@ public class Driver : MonoBehaviour
 
     IEnumerator DriverRoutine()
     {
-        float elapsedTime = 0;
+        float elapsedTime;
         
-        while (elapsedTime <= duration)
+        if (_playForward == true)
+            elapsedTime = 0;
+        else
+            elapsedTime = duration;
+        
+        while (0 <= elapsedTime && elapsedTime <= duration)
         {
-            elapsedTime += Time.deltaTime;
+            if (_playForward == true)
+                elapsedTime += Time.deltaTime;
+            else
+                elapsedTime -= Time.deltaTime;
 
             float result = elapsedTime / duration;
             
